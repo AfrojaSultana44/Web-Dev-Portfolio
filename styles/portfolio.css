@@ -205,10 +205,8 @@ footer textarea {
 }
 
 /* responsive media query */
-.hide {
-  display: none;
-}
-/* smaller device */
+
+/* mobile specific media query */
 @media screen and (max-width: 576px) {
   .skills-container,
   .resume-container,
@@ -239,17 +237,40 @@ footer textarea {
     background-image: none;
   }
 
-  .resume-container {
-    padding: 0 20px;
-  }
-
   footer,
-  .about {
+  .about,
+  .resume-container {
     padding: 20px;
   }
 
   .footer-column {
     width: 100%;
+  }
+
+  footer input[type="text"],
+  footer input[type="email"],
+  footer textarea {
+    width: calc(100% - 40px);
+  }
+}
+
+/* tablet specific media query */
+@media screen and (min-width: 576px) and (max-width: 990px) {
+  .banner {
+    flex-direction: column;
+  }
+
+  .about-items,
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills-container,
+  .resume-container,
+  footer,
+  .about {
+    padding: 20px;
   }
 
   footer input[type="text"],
